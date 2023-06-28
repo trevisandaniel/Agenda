@@ -8,24 +8,38 @@
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="title.css" />
     <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   </head>
   <body>
     <header class="header">
-      Soma Agenda
-      <nav>
-        <ul class="header__nav">
-          <li class="header__nav-item">
-            <a href="">Home</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="">Home</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="">Home</a>
-          </li>
-        </ul>
-      </nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <h3>Soma Agenda</h3>
+          </div>
+          
+          <div class="col-4">
+            <nav>
+              <ul class="header__nav">
+                <li class="header__nav-item">
+                  <a href="">Início</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="">Agenda</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="">Senha</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      
     </header>
+    
     <main>
       <section class="title">
         <div class="title__container">
@@ -38,67 +52,181 @@
 
       <section class="form">
         <form>
-          <div class="form__field">
-            <label for="">Razão Social:</label>
-            <input type="text" />
+          <div class="form-floating">
+            <input class="form-control" type="text" placeholder="Razão Social">
+            <label class="form-label" for="razao-social">Razão Social</label>
           </div>
-          <div class="form__field">
-            <label for="">Nome Fantasia:</label>
-            <input type="text" />
+
+          <div class="form-floating">
+            <input class="form-control" type="text" placeholder="Nome Fantasia">
+            <label class="form-label" for="Nome Fantasia">Nome Fantasia</label>
           </div>
-          <div class="form__field">
-            <label for="">Servidor:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Plantão:</label>
-            <select name="option" >
-              <option value=""></option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
+
+            <select class="form-select">
+              <option selected>Indique o SO do servidor</option>
+              <option value="1">Windows</option>
+              <option value="2">Linux</option>
             </select>
-          </div>
-          <div class="form__field">
-            <label for="">Endereço:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Responsável:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Cidade:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">UF</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Telefone:</label>
-            <input type="tel" />
-          </div>
-          <div class="form__field">
-            <label for="">Sped:</label>
-            <select name="option" >
-              <option value=""></option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
+            
+            <select class="form-select">
+              <option selected>Plantão</option>
+              <option value="1">Sim</option>
+              <option value="2">Não</option>
             </select>
-          </div>
-          <div class="form__field">
-            <label for="">E-mail:</label>
-            <input type="email" />
-          </div>
-          <div class="form__field">
-            <label for="">IP Acesso Remoto</label>
-            <input type="text" />
-          </div>
-          <div class="form__field-btn">
-            <button type="submit" class="add">Confirmar</button>
-            <button type="button" class="cancel">Cancelar</button>
-          </div>
+
+            <div class="form-floating">
+              <input class="form-control" type="text" placeholder="Endereço">
+              <label class="form-label" for="">Endereço</label>
+            </div>
+
+            <div class="form-floating">
+              <input class="form-control" type="text" placeholder="Responsavel">
+              <label class="form-label" for="Responsavel">Responsável</label>
+            </div>
+          
+            <div class="form-floating">
+              <input class="form-control" type="text" placeholder="Cidade">
+              <label class="form-label" for="Cidade">Cidade</label>
+            </div>
+
+            <div class="form-floating">
+              <input class="form-control" type="text" placeholder="UF">
+              <label class="form-label" for="UF">UF</label>
+            </div>
+
+            <div class="form-floating">
+              <input class="form-control" type="tel" placeholder="Telefone">
+              <label class="form-label" for="Telefone">Telefone</label>
+            </div>
+
+            <select class="form-select">
+              <option selected>Sped</option>
+              <option value="1">Sim</option>
+              <option value="2">Não</option>
+            </select>
+
+            <div class="form-floating">
+              <input class="form-control" type="email" placeholder="Email">
+              <label class="form-label" for="Email">E-mail</label>
+            </div>
+
+            <div class="form-floating">
+              <input class="form-control" type="text" placeholder="Ip acesso Remoto">
+              <label class="form-label" for="ip">Ip acesso remoto</label>
+            </div>
+
+            <div class="form__field-btn">
+              <button type="submit" class="add">Confirmar</button>
+              <button type="button" class="cancel">Cancelar</button>
+            </div>
         </form>
+      </section>
+
+<hr>
+    
+      <section id="table">
+
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Razão Social</th>
+              <th>Responsável</th>
+              <th>E-mail</th>
+              <th>Plantão</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <button onClick="esconderLinha('linhaEsconder')">+</button>
+              </td>
+              <td>Hiper Wagner</td>
+              <td>Wagner</td>
+              <td>wagner@email.com</td>
+              <td>Sim</td>
+            </tr>
+            <!--a partir daqui será a nested table-->
+            <tr id="linhaEsconder" style="display: none">
+              <td></td>
+              <td colspan="7">
+                <table class="table table-striped">
+
+                  <thead>
+                    <tr>
+                      <th>Nome Fantasia</th>
+                      <th>Servidor</th>
+                      <th>Endereço</th>
+                      <th>Cidade</th>
+                      <th>UF</th>
+                      <th>Sped</th>
+                      <th>IP Acesso Remoto</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>HiperWagner Constantina</td>
+                      <td>Linux</td>
+                      <td>Rua tal numero 123, centro</td>
+                      <td>Constantina</td>
+                      <td>RS</td>
+                      <td>Sim</td>
+                      <td>127.0.0.1</td>
+                    </tr>
+                  </tbody>
+                 
+                </table>
+              </td>
+            </tr>
+            <!--Fim da nested table-->
+
+            <tr>
+              <td>
+                <button onClick="esconderLinha2('linhaEsconder')">+</button>
+              </td>
+              <td>Hiper Wagner</td>
+              <td>Wagner</td>
+              <td>wagner@email.com</td>
+              <td>Sim</td>
+            </tr>
+            <!--a partir daqui será a nested table-->
+            <tr id="linhaEsconder2" style="display: none">
+              <td></td>
+              <td colspan="7">
+                <table class="table table-striped">
+
+                  <thead>
+                    <tr>
+                      <th>Nome Fantasia</th>
+                      <th>Servidor</th>
+                      <th>Endereço</th>
+                      <th>Cidade</th>
+                      <th>UF</th>
+                      <th>Sped</th>
+                      <th>IP Acesso Remoto</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>HiperWagner Constantina</td>
+                      <td>Linux</td>
+                      <td>Rua tal numero 123, centro</td>
+                      <td>Constantina</td>
+                      <td>RS</td>
+                      <td>Sim</td>
+                      <td>127.0.0.1</td>
+                    </tr>
+                  </tbody>
+                 
+                </table>
+              </td>
+            </tr>
+            <!--Fim da nested table-->
+          </tbody>
+
+        </table>
       </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
