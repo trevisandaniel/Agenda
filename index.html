@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda de Clientes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="title.css" />
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <header class="header">
+      Soma Agenda
+      <nav>
+        <ul class="header__nav">
+          <li class="header__nav-item">
+            <a href="">Home</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="">Home</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="">Home</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="title">
+        <div class="title__container">
+          <h1>Agenda de Clientes</h1>
+          <button type="button" class="title__container-btn">
+            Adicionar +
+          </button>
+        </div>
+      </section>
+
+      <section class="form">
+        <form>
+          <div class="form__field">
+            <label for="">Razão Social:</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">Nome Fantasia:</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">Servidor:</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">Plantão:</label>
+            <select name="option" >
+              <option value=""></option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="">Endereço:</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">Responsável:</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">Cidade:</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">UF</label>
+            <input type="text" />
+          </div>
+          <div class="form__field">
+            <label for="">Telefone:</label>
+            <input type="tel" />
+          </div>
+          <div class="form__field">
+            <label for="">Sped:</label>
+            <select name="option" >
+              <option value=""></option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="">E-mail:</label>
+            <input type="email" />
+          </div>
+          <div class="form__field">
+            <label for="">IP Acesso Remoto</label>
+            <input type="text" />
+          </div>
+          <div class="form__field-btn">
+            <button type="submit" class="add">Confirmar</button>
+            <button type="button" class="cancel">Cancelar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
