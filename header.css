@@ -1,4 +1,7 @@
-.header{
+/*bootstrap*/
+
+
+/*.header{
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -22,7 +25,7 @@
     text-decoration: none;
     color: rgb(54, 131, 54);
     /*background-color: rgb(54, 131, 54);*/
-    border-radius: 2px;
+    /*border-radius: 2px;
     padding: 4px;
     font-weight: bold;
 }
@@ -30,4 +33,5 @@
 .header__nav-item a:hover{
     color: rgb(64, 189, 64);
     border-bottom: 2px solid rgb(64, 189, 64);
-}
+}/*
+
