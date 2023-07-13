@@ -1,107 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agenda de Clientes</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="title.css" />
-    <link rel="stylesheet" href="form.css" />
-  </head>
-  <body>
-    <header class="header">
-      Soma Agenda
-      <nav>
-        <ul class="header__nav">
-          <li class="header__nav-item">
-            <a href="">Home</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda de Clientes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="title.css" />
+  <link rel="stylesheet" href="form.css" />
+  <link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <a class="navbar-brand" href="#">Somasys</a>
+      <!--botão do menu hamburguer-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuHamburguer"
+        aria-controls="#menuHamburguer" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuHamburguer">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Início</a>
           </li>
-          <li class="header__nav-item">
-            <a href="">Home</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="">Home</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Senha</a>
           </li>
         </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="title">
-        <div class="title__container">
-          <h1>Agenda de Clientes</h1>
-          <button type="button" class="title__container-btn">
-            Adicionar +
-          </button>
-        </div>
-      </section>
+      </div>
 
-      <section class="form">
-        <form>
-          <div class="form__field">
-            <label for="">Razão Social:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Nome Fantasia:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Servidor:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Plantão:</label>
-            <select name="option" >
-              <option value=""></option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select>
-          </div>
-          <div class="form__field">
-            <label for="">Endereço:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Responsável:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Cidade:</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">UF</label>
-            <input type="text" />
-          </div>
-          <div class="form__field">
-            <label for="">Telefone:</label>
-            <input type="tel" />
-          </div>
-          <div class="form__field">
-            <label for="">Sped:</label>
-            <select name="option" >
-              <option value=""></option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select>
-          </div>
-          <div class="form__field">
-            <label for="">E-mail:</label>
-            <input type="email" />
-          </div>
-          <div class="form__field">
-            <label for="">IP Acesso Remoto</label>
-            <input type="text" />
-          </div>
-          <div class="form__field-btn">
-            <button type="submit" class="add">Confirmar</button>
-            <button type="button" class="cancel">Cancelar</button>
-          </div>
-        </form>
-      </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-  </body>
+    </nav>
+  </header>
+
+
+
+  <main id="main">
+    <section class="title">
+      <div class="container">
+        <h1>Agenda de Clientes</h1>
+        <button type="button" class="title__container-btn">
+          Adicionar +
+        </button>
+      </div>
+    </section>
+
+    <section class="form">
+      <form id="form">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="Razão Social" id="razaoSocial">
+          <label class="form-label" for="razaoSocial">Razão Social</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="Nome Fantasia" id="nomeFantasia">
+          <label class="form-label" for="nomeFantasia">Nome Fantasia</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="CNPJ" id="cnpj">
+          <label class="form-label" for="cnpj">CNPJ</label>
+        </div>
+
+        <select class="form-select" id="codigoEmpresa">
+          <option selected>Código da Empresa</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+
+        <select class="form-select" id="sistemaOperacional">
+          <option selected>Indique o SO do servidor</option>
+          <option value="1">Windows</option>
+          <option value="2">Linux</option>
+        </select>
+
+        <select class="form-select" id="plantao">
+          <option selected>Plantão</option>
+          <option value="1">Sim</option>
+          <option value="2">Não</option>
+        </select>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="Endereço" id="endereco">
+          <label class="form-label" for="endereco">Endereço</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="Responsavel" id="responsavel">
+          <label class="form-label" for="responsavel">Responsável</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="Cidade" id="cidade">
+          <label class="form-label" for="cidade">Cidade</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="UF" id="uf">
+          <label class="form-label" for="uf">UF</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="tel" placeholder="Telefone" id="telefone">
+          <label class="form-label" for="telefone">Telefone</label>
+        </div>
+
+        <select class="form-select" id="sped">
+          <option selected>Sped</option>
+          <option value="1">Sim</option>
+          <option value="2">Não</option>
+        </select>
+
+        <div class="form-floating">
+          <input class="form-control" type="email" placeholder="Email" id="email">
+          <label class="form-label" for="email">E-mail</label>
+        </div>
+
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder="Ip acesso Remoto" id="ipRemoto">
+          <label class="form-label" for="ipRemoto">Ip acesso remoto</label>
+        </div>
+
+        <div class="form__field-btn">
+          <button type="submit" class="add">Confirmar</button>
+          <button type="button" class="cancel">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <hr>
+
+    <section id="table">
+      <div class="containr">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Razão Social</th>
+              <th>Cnpj</th>
+              <th>Cod Empresa</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th>Plantão</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <!--
+            <tr>
+              <td>
+                <button onClick="esconderLinha('linhaEsconder')"><i class="bi bi-chevron-compact-down"></i></button>
+              </td>
+              <td>Hiper Wagner</td>
+              <td>012.345.678/0009-10</td>
+              <td>7</td>
+              <td>(54)12345-6789</td>
+              <td>wagner@email.com</td>
+              <td>Sim</td>
+            </tr>
+            -->
+            <!--a partir daqui será a nested table-->
+            <!--
+            <tr id="linhaEsconder" style="display: none"> 
+              <td colspan="7">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Nome Fantasia</th>
+                      <th>Responsável</th>
+                      <th>Servidor</th>
+                      <th>Endereço</th>
+                      <th>Cidade</th>
+                      <th>UF</th>
+                      <th>Sped</th>
+                      <th>IP Acesso Remoto</th>
+                    </tr>
+                  </thead>
+  
+                  <tbody>
+                    <tr>
+                      <td>HiperWagner Constantina</td>
+                      <td>Wagner</td>
+                      <td>Linux</td>
+                      <td>Rua tal numero 123, centro</td>
+                      <td>Constantina</td>
+                      <td>RS</td>
+                      <td>Sim</td>
+                      <td>127.0.0.1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            -->
+            <!--Fim da nested table-->
+            <!--
+          </tbody>
+        </table>
+        </td>
+        </tr>
+        </tbody>
+  
+        </table>
+        -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="js/jquery.mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
